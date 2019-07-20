@@ -1,0 +1,116 @@
+/* miniprogram/pages/index/addDay/addDay.wxss */
+page{
+  width: 100%;
+  height: auto;
+}
+.addmemoria-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: #2F4F4F;
+  font-size: 30rpx;
+}
+.head{
+  font-size: 60rpx;
+  color: #2F4F4F;
+  font-weight: bold;
+  margin: 40rpx 30rpx;
+}
+.form-block{
+  width: 690rpx;
+  height: auto;
+  background: #fff;
+  margin: 0 30rpx;
+  box-shadow:#ececec 0rpx 0rpx 20rpx ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:flex-start;
+
+}
+.line-block{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 630rpx;
+  height: 80rpx;
+  border: 1rpx solid #bfbfbf;
+  box-sizing: border-box;
+  margin: 25rpx 0 0 0;
+  border-radius: 6rpx;
+}
+.line-block input,.line-block picker{
+  height: 100%;
+  flex: 1;
+
+
+}
+.line-block text{
+  margin: 0 15rpx;
+}
+.gray{
+  font-size: 30rpx;
+  color: #C0C0C0;
+}
+.picker{
+  width:100%;
+  height:80rpx;
+  line-height: 80rpx;
+}
+.upload-button{
+  width: 630rpx;
+  height: 80rpx;
+  margin-top: 40rpx;
+  margin-bottom: 60rpx;
+  background: rgba(255, 36, 0,0.6);
+  border-radius: 6rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+}
+button::after,button::before{
+  display: none;
+}
+.img-block{
+  height: 150rpx;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.list-block{
+  height: auto;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.solids{
+  width: 120rpx;
+  height: 120rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cuIcon-cameraadd{
+  font-size: 50rpx;
+}
+.cover-img{
+  width: 120rpx;
+  height: 120rpx;
+  margin:15rpx;
+}
+.cu-form-group{
+  padding: 0;
+  height: 100%;
+  background: none;
+  margin-right:20rpx;
+}
+.line-block textarea{
+  height: 500rpx;
+}
+.content-block{
+  height: auto;
+  align-items: flex-start;
+}
+textarea{
+  flex:1;
+  margin-top: 15rpx;
+}

@@ -1,0 +1,61 @@
+<!--miniprogram/pages/index/addDay/addDay.wxml-->
+<view class='addmemoria-container'>
+  <view class='head'>
+    添加约会日记
+  </view>
+  <form bindsubmit="addDating">
+  <view class='form-block'>
+    
+    <view class='line-block img-block' style='margin-top:50rpx;'>
+      <text style='margin-top:15rpx;'>封面图片:</text>
+      <image class='cover-img' wx:if="{{coverImg}}" src="{{coverImg}}"></image>
+      <view class="solids" bindtap="chooseCover" style='margin-top:15rpx;' wx:if="{{!coverImg}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+    </view>
+    <view class='line-block list-block'>
+      <text style='margin-top:15rpx;'>相关图片:</text>
+      <block wx:if="{{imgList.length!=0}}"><image  wx:for="{{imgList}}" class='cover-img'  src="{{item}}"></image></block>
+      <view class="solids" bindtap="chooseImg" style='margin:15rpx 0;' wx:if="{{imgList.length<3}}">
+				<text class="cuIcon-cameraadd"></text>
+			</view>
+    </view>
+    <view class='line-block'>
+      <text>地点:</text>
+      <input placeholder='这里输入约会地点' placeholder-class='gray' name="place"></input>
+    </view>
+    <view class='line-block'>
+      <text>标签:</text>
+      <input placeholder='这里输入个性标签' placeholder-class='gray' name="tag"></input>
+    </view>
+    <view class='line-block'>
+      <text>约会时间:</text>
+      <!-- <picker class='picker'
+        mode="date"
+        value="{{date}}"
+        start="2018-05-13"
+        end="2019-09-01"
+        bindchange="bindTimeChange"
+      ></picker> -->
+      <picker mode="date" value="{{date}}" start="1997-05-13" end="2028-05-13" bindchange="bindDateChange" name="time">
+        <view class="picker {{date?'':'gray'}}" >
+           {{date?date:"点击选择时间"}}
+        </view>
+      </picker>
+    </view>
+    
+    <view class='line-block' style='justify-content: space-between;'>
+      <text>作者性别:</text>
+      <view class="cu-form-group">
+        <switch class="switch-sex" checked name="sex"></switch>
+      </view>
+    </view>
+    <view class='line-block content-block' >
+      <text style='margin-top:15rpx;'>文字描述:</text>
+      <textarea placeholder='这里输入纪念日内容' placeholder-class='gray'  maxlength="500" name="content" auto-height></textarea>
+    </view>
+    <button  class='upload-button' form-type="submit">添加纪念日</button>
+  </view>
+  </form>
+  <bottom></bottom>
+</view>

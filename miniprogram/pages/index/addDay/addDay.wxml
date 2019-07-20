@@ -1,0 +1,36 @@
+<!--miniprogram/pages/index/addDay/addDay.wxml-->
+<view class='add-container'>
+  <view class='head'>
+    添加纪念日
+  </view>
+  <form bindsubmit="uploadDay">
+  <view class='form-block'>
+    <view class='line-block' style='margin-top:50rpx;'>
+      <text>标题:</text>
+      <input placeholder='这里输入纪念日内容' placeholder-class='gray' name="title"></input>
+    </view>
+    <view class='line-block'>
+      <text>地点:</text>
+      <input placeholder='这里输入纪念日地点' placeholder-class='gray' name="place"></input>
+    </view>
+    <view class='line-block'>
+      <text>时间:</text>
+      <!-- <picker class='picker'
+        mode="date"
+        value="{{date}}"
+        start="2018-05-13"
+        end="2019-09-01"
+        bindchange="bindTimeChange"
+      ></picker> -->
+      <picker mode="date" value="{{date}}" start="1997-05-13" end="2028-05-13" bindchange="bindDateChange" name="time">
+        <view class="picker {{date?'':'gray'}}" >
+           {{date?date:"点击选择时间"}}
+        </view>
+      </picker>
+    </view>
+    
+    <button  class='upload-button' form-type="submit">添加纪念日</button>
+  </view>
+  </form>
+  <bottom></bottom>
+</view>

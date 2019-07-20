@@ -1,0 +1,45 @@
+<view class='memoria-container'>
+  <view class='memoria-head'>
+    <view class='head'>
+      记录美好时刻吧
+    </view>
+    
+  </view>
+  <view class='add-button' bindtap='goAdd'>
+      <text>添加记录</text>
+    </view>
+  <view class='memoria-list' wx:if="{{dateList.length!=0}}">
+    <view class="cu-card case " wx:for="{{dateList}}" data-id='{{item._id}}' bindtap='goDetail'>
+      <view class="cu-item shadow">
+        <view class="image">
+          <image src="{{item.coverSrc}}" style='object-fit: cover;'></image>
+          <view class="cu-tag bg-blue">{{item.tag}}</view>
+          <view class="cu-bar bg-shadeBottom">
+            <text class="text-cut">{{item.content}}</text>
+          </view>
+        </view>
+        <view class="cu-list menu-avatar">
+          <view class="cu-item">
+            <image class="cu-avatar round lg" src='{{head.male}}' wx:if="{{item.sex=='male'}}"></image>
+            <image class="cu-avatar round lg" src='{{head.female}}' wx:if="{{item.sex=='female'}}"></image>
+            <view class="content flex-sub">
+              <view class="text-grey" wx:if="{{item.sex=='male'}}">Wifla</view>
+              <view class="text-grey" wx:if="{{item.sex=='female'}}">Crystal</view>
+              <view class="text-gray text-sm flex justify-between">
+                {{item.uploadtime}}
+                <view class="text-gray text-sm">
+                  <text class="cuIcon-global "></text> {{item.place}}
+                  <text class="cuIcon-time " style='margin-left: 5rpx;'></text>{{item.time}}
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <view bindtap='loadMore' class='load-more' wx:if="{{hasMore && dateList.length != 0}}" >更多...</view>
+  <view wx:if="{{!hasMore && dateList.length != 0}}" class="cu-load  {{!hasMore?'over':''}}"></view>
+  <view wx:if="{{loading}}" class="cu-load  {{loading?'loading':''}}"></view>
+</view>

@@ -1,0 +1,39 @@
+<import src="../../../img-loader/img-loader.wxml"/>
+
+<view class="detail-container">
+  <view class='author-info'>
+    <view class='left-info'>
+      <image class='author-img' src='{{head.male}}' wx:if="{{memoriaDetail.sex =='male'}}"></image>
+      <image class='author-img' src='{{head.female}}' wx:if="{{memoriaDetail.sex =='female'}}"></image>
+      <text wx:if="{{memoriaDetail.sex =='male'}}">Wifla</text>
+      <text wx:if="{{memoriaDetail.sex =='female'}}">Crystal</text>
+    </view>
+    <view class='right-info'>
+      <view class="cu-tag radius bg-pink light detail-tag" wx:if="{{memoriaDetail.tag}}">{{memoriaDetail.tag}}</view>
+      <text class='cuIcon-deletefill lg text-gray' wx:if="{{head}}" style='color:rgba(255, 36, 0,0.6);' bindtap='deleteDetail' data-id='{{memoriaDetail._id}}'>
+      
+      </text>
+    </view>
+  </view>
+  <view class='detail-banner' style='background-image: url({{memoriaDetail.coverSrc}});' ></view>
+  <view class='text-info'>
+    {{memoriaDetail.content}}
+  </view>
+  <view class='detail-time'>{{memoriaDetail.uploadtime}}
+    <view class="text-gray text-sm" style='color: #ccc;'>
+      <text class="cuIcon-global "></text> {{memoriaDetail.place}}
+      <text class="cuIcon-time " style='margin-left: 5rpx;'></text>{{memoriaDetail.time}}
+    </view>
+  </view>
+
+  <view class="margin radius bg-gradual-red shadow-blur" wx:if="{{memoriaDetail}}">
+    <text class='img-title' >约会图片</text>
+    <image src="https://image.weilanwl.com/gif/wave.gif" mode="scaleToFill" class="gif-black response" style="height:100rpx;mix-blend-mode:screen;"></image>
+  </view>
+  <view class='img-list' wx:if="{{memoriaDetail.srcList }}">
+    
+    <view class='img-block'  wx:for="{{memoriaDetail.srcList}}">
+      <image src='{{item}}' mode='widthFix' bindtap='previewImg' data-index="{{index}}"></image>
+    </view>
+  </view>
+</view>

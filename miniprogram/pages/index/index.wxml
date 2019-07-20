@@ -1,0 +1,127 @@
+<!--index.wxml-->
+
+<view class="index-container">
+  <view class="cu-modal {{showUpdate?'show':''}}">
+    <view class="cu-dialog">
+      <view class="cu-bar bg-white justify-end">
+        <view class="content">修改纪念日</view>
+        <view class="action" bindtap='hideUpdate'>
+          <text class="cuIcon-close text-red"></text>
+        </view>
+      </view>
+      <view class="padding-xl">
+      <form bindsubmit="updateDay">
+        <view class='form-block'>
+          <view class='line-block' style='margin-top:50rpx;'>
+            <text>标题:</text>
+            <input placeholder='这里输入纪念日内容' placeholder-class='gray' name="title" value='{{updateDetail.title}}' ></input>
+          </view>
+          <view class='line-block'>
+            <text>地点:</text>
+            <input placeholder='这里输入纪念日地点' placeholder-class='gray' name="place" value='{{updateDetail.place}}'></input>
+          </view>
+          <view class='line-block'>
+            <text>时间:</text>
+            <!-- <picker class='picker'
+              mode="date"
+              value="{{date}}"
+              start="2018-05-13"shi
+              end="2019-09-01"
+              bindchange="bindTimeChange"
+            ></picker> -->
+            <picker mode="date" value="{{date}}" start="1997-05-13" end="2028-05-13" bindchange="bindDateChange" name="time">
+              <view class="picker " >
+               {{updateDetail.time}}
+              </view>
+            </picker>
+          </view>
+          
+          <button  class='upload-button' form-type="submit" >修改</button>
+        </view>
+      </form>
+      </view>
+    </view>
+  </view>
+  <view class="cu-modal bottom-modal {{showBottomDia?'show':''}}">
+    <view class="cu-dialog">
+      <view class="padding-xl head-padding">
+        <view class='head-block' bindtap='changeHead'>更换头像</view>
+        <view class='head-block' bindtap='previewImg'>查看大图</view>
+        <view class='head-block' style='margin-top:10rpx;' bindtap='hideBottomDia'>取消</view>
+      </view>
+    </view>
+  </view>
+  <!-- 用户 openid -->
+  <!-- <view class="userinfo">
+    <button 
+      open-type="getUserInfo" 
+      bindgetuserinfo="onGetUserInfo"
+      class="userinfo-avatar"
+      style="background-image: url({{avatarUrl}})"
+    ></button>
+    <view>
+      <button class="userinfo-nickname" bindtap="onGetOpenid">点击获取 openid</button>
+    </view>
+  </view> -->
+
+
+
+
+
+
+
+
+  <view class='index-bg' >
+    
+  </view>
+  <view class='count-card'>
+    <view class='male' >
+      <image src='{{head.male}}' data-src='{{head.male}}' data-sex= "male"  bindtap='showBottomDia'></image>
+      <text>Wifla</text>
+    </view>
+    <view class='info'>
+      <text>在一起已经</text>
+      <view>
+        <text class='count'>{{dayCount}}</text>
+        <text>天</text>
+      </view>
+      <text class='start-time'>2018-05-13</text>
+    </view>
+    <view class='female' >
+      <image src='{{head.female}}' data-src='{{head.female}}' data-sex="female" bindtap='showBottomDia' ></image>
+      <text>Crystal</text>
+    </view>
+  </view>
+  <view class='day-group'>
+    <view class='day-block' wx:if="{{dayArr.length}}" wx:for="{{dayArr}}">
+      <view class='left-info'>
+        <view class='info-title'>
+          <image src='../../images/icons/day.png'></image>
+          <text>{{item.title}}</text>
+        </view>
+        <view class='info-time'>
+          日期：{{item.time}}
+        </view>
+        <view class='info-place'>
+          地点： {{item.place}}
+        </view>
+        <view class='info-button'>
+          <view class='update' bindtap='showUpdate' data-detail='{{item}}'>修改</view>
+          <view class='delete' bindtap='deleteDay' data-id='{{item._id}}'>删除</view>
+        </view>
+      </view>
+      <view class='right-info'>
+        <text style='margin-bottom:10rpx;'>已经</text>
+        <text><text style="color:rgba(255, 36, 0,0.6);font-size:36rpx;font-weight:bold">{{item.count}}</text>天</text>
+      </view>
+    </view>
+  </view>
+  <view class='day'>
+    <image src='../../images/icons/addDay.png' class='add-button' bindtap='goAdd'></image>
+    <view class='bottom'>
+      <view class='line'></view>
+      <view class='middle-font'>It's for Crystal</view>
+      <view class='line'></view>
+    </view>
+  </view>
+</view>

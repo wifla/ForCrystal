@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/password/password",
+    "pages/index/index",
+    "pages/memoria/memoria",
+    
+    
+    "pages/index/addDay/addDay",
+    "pages/memoria/addMemoria/addMemoria",
+    "pages/foto/foto",
+    "pages/memoria/memoriaDetail/memoriaDetail"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "Wifla and Crystal",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#bfbfbf",
+    "selectedColor": "#d81e06",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "Amor",
+        "iconPath": "images/icons/Amorg.png",
+        "selectedIconPath": "images/icons/Amor.png"
+      },
+      {
+        "pagePath": "pages/memoria/memoria",
+        "text": "Memoria",
+        "iconPath": "images/icons/Memoriag.png",
+        "selectedIconPath": "images/icons/Memoria.png"
+      }
+    ]
+  }
+}

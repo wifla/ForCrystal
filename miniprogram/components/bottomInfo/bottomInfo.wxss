@@ -1,0 +1,16 @@
+.bottom{
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50rpx;
+}
+.line{
+  border-top: 1rpx solid #CDCDCD;
+  width: 100rpx;
+}
+.middle-font{
+  color: #CDCDCD;
+  margin: 0 10rpx;
+}
