@@ -3,8 +3,6 @@
     "pages/password/password",
     "pages/index/index",
     "pages/memoria/memoria",
-    
-    
     "pages/index/addDay/addDay",
     "pages/memoria/addMemoria/addMemoria",
     "pages/foto/foto",
@@ -35,5 +33,6 @@
         "selectedIconPath": "images/icons/Memoria.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

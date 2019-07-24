@@ -11,7 +11,8 @@
 	"appid": "wx6613443d4badda23",
 	"projectname": "ForCrystal",
 	"libVersion": "2.2.5",
- 
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

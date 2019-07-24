@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "bottom": "/components/bottomInfo/bottomInfo"
-  }
+  },
+  "navigationBarTitleText": "adding..."
 }
